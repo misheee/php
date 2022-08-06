@@ -1,0 +1,29 @@
+<?php
+
+/*$
+name = readline("Привет, как тебя зовут?\n");
+$age = readline("Сколько тебе лет?\n");
+
+echo "Тебя зовут $name, тебе $age лет \n";
+ */
+
+
+$name = readline("Привет, как тебя зовут? ");
+$task1 = readline("Какая задача стоит перед тобой сегодня? ");
+readline_add_history($task1);
+$time1 = (int)readline("Сколько примерно времени эта задача займет? ");
+$task2 = readline("Какая задача стоит перед тобой сегодня? ");
+readline_add_history($task2);
+$time2 = (int)readline("Сколько примерно времени эта задача займет? ");
+$task3 = readline("Какая задача стоит перед тобой сегодня? ");
+readline_add_history($task3);
+$time3 = (int)readline("Сколько примерно времени эта задача займет? ");
+
+$taskCount = count(readline_list_history());
+$timeCount = $time1 + $time2 + $time3;
+
+echo "$name, сегодня у вас запланировано $taskCount приоритетных задачи на день:
+- $task1 ({$time1}ч)
+- $task2 ({$time2}ч)
+- $task3 ({$time3}ч)
+Примерное время выполнения плана = {$timeCount}ч\n";
